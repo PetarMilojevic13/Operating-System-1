@@ -1,0 +1,338 @@
+GAS LISTING /tmp/ccLp11oR.s 			page 1
+
+
+   1              		.file	"probasleep.cpp"
+   2              		.option pic
+   3              		.option norelax
+   4              		.text
+   5              	.Ltext0:
+   6              		.align	2
+   7              		.globl	_Z6sleepAPv
+   9              	_Z6sleepAPv:
+  10              	.LFB0:
+  11              		.file 1 "src/probasleep.cpp"
+   1:src/probasleep.cpp **** //
+   2:src/probasleep.cpp **** // Created by os on 9/2/23.
+   3:src/probasleep.cpp **** //
+   4:src/probasleep.cpp **** 
+   5:src/probasleep.cpp **** #include "../h/syscall_c.h"
+   6:src/probasleep.cpp **** 
+   7:src/probasleep.cpp **** 
+   8:src/probasleep.cpp **** void sleepA(void* arg)
+   9:src/probasleep.cpp **** {
+  12              		.loc 1 9 1
+  13              		.cfi_startproc
+  14              	.LVL0:
+  15 0000 130101FF 		addi	sp,sp,-16
+  16              		.cfi_def_cfa_offset 16
+  17 0004 23341100 		sd	ra,8(sp)
+  18 0008 23308100 		sd	s0,0(sp)
+  19              		.cfi_offset 1, -8
+  20              		.cfi_offset 8, -16
+  21 000c 13040101 		addi	s0,sp,16
+  22              		.cfi_def_cfa 8, 0
+  10:src/probasleep.cpp ****     time_sleep(100);
+  23              		.loc 1 10 5
+  24              		.loc 1 10 15 is_stmt 0
+  25 0010 13054006 		li	a0,100
+  26              	.LVL1:
+  27 0014 97000000 		call	_Z10time_sleepm@plt
+  27      E7800000 
+  28              	.LVL2:
+  11:src/probasleep.cpp ****     putc('G');
+  29              		.loc 1 11 5 is_stmt 1
+  30              		.loc 1 11 9 is_stmt 0
+  31 001c 13057004 		li	a0,71
+  32 0020 97000000 		call	_Z4putcc@plt
+  32      E7800000 
+  33              	.LVL3:
+  12:src/probasleep.cpp ****     putc('\n');
+  34              		.loc 1 12 5 is_stmt 1
+  35              		.loc 1 12 9 is_stmt 0
+  36 0028 1305A000 		li	a0,10
+  37 002c 97000000 		call	_Z4putcc@plt
+  37      E7800000 
+  38              	.LVL4:
+  13:src/probasleep.cpp **** }
+  39              		.loc 1 13 1
+  40 0034 83308100 		ld	ra,8(sp)
+  41              		.cfi_restore 1
+  42 0038 03340100 		ld	s0,0(sp)
+GAS LISTING /tmp/ccLp11oR.s 			page 2
+
+
+  43              		.cfi_restore 8
+  44              		.cfi_def_cfa 2, 16
+  45 003c 13010101 		addi	sp,sp,16
+  46              		.cfi_def_cfa_offset 0
+  47 0040 67800000 		jr	ra
+  48              		.cfi_endproc
+  49              	.LFE0:
+  51              		.align	2
+  52              		.globl	_Z6sleepBPv
+  54              	_Z6sleepBPv:
+  55              	.LFB1:
+  14:src/probasleep.cpp **** 
+  15:src/probasleep.cpp **** 
+  16:src/probasleep.cpp **** void sleepB(void* arg)
+  17:src/probasleep.cpp **** {
+  56              		.loc 1 17 1 is_stmt 1
+  57              		.cfi_startproc
+  58              	.LVL5:
+  59 0044 130101FF 		addi	sp,sp,-16
+  60              		.cfi_def_cfa_offset 16
+  61 0048 23341100 		sd	ra,8(sp)
+  62 004c 23308100 		sd	s0,0(sp)
+  63              		.cfi_offset 1, -8
+  64              		.cfi_offset 8, -16
+  65 0050 13040101 		addi	s0,sp,16
+  66              		.cfi_def_cfa 8, 0
+  18:src/probasleep.cpp ****     time_sleep(200);
+  67              		.loc 1 18 5
+  68              		.loc 1 18 15 is_stmt 0
+  69 0054 1305800C 		li	a0,200
+  70              	.LVL6:
+  71 0058 97000000 		call	_Z10time_sleepm@plt
+  71      E7800000 
+  72              	.LVL7:
+  19:src/probasleep.cpp ****     putc('N');
+  73              		.loc 1 19 5 is_stmt 1
+  74              		.loc 1 19 9 is_stmt 0
+  75 0060 1305E004 		li	a0,78
+  76 0064 97000000 		call	_Z4putcc@plt
+  76      E7800000 
+  77              	.LVL8:
+  20:src/probasleep.cpp ****     putc('\n');
+  78              		.loc 1 20 5 is_stmt 1
+  79              		.loc 1 20 9 is_stmt 0
+  80 006c 1305A000 		li	a0,10
+  81 0070 97000000 		call	_Z4putcc@plt
+  81      E7800000 
+  82              	.LVL9:
+  21:src/probasleep.cpp **** }
+  83              		.loc 1 21 1
+  84 0078 83308100 		ld	ra,8(sp)
+  85              		.cfi_restore 1
+  86 007c 03340100 		ld	s0,0(sp)
+  87              		.cfi_restore 8
+  88              		.cfi_def_cfa 2, 16
+  89 0080 13010101 		addi	sp,sp,16
+  90              		.cfi_def_cfa_offset 0
+GAS LISTING /tmp/ccLp11oR.s 			page 3
+
+
+  91 0084 67800000 		jr	ra
+  92              		.cfi_endproc
+  93              	.LFE1:
+  95              		.align	2
+  96              		.globl	_Z10probasleepv
+  98              	_Z10probasleepv:
+  99              	.LFB2:
+  22:src/probasleep.cpp **** 
+  23:src/probasleep.cpp **** void probasleep()
+  24:src/probasleep.cpp **** {
+ 100              		.loc 1 24 1 is_stmt 1
+ 101              		.cfi_startproc
+ 102 0088 130101FE 		addi	sp,sp,-32
+ 103              		.cfi_def_cfa_offset 32
+ 104 008c 233C1100 		sd	ra,24(sp)
+ 105 0090 23388100 		sd	s0,16(sp)
+ 106              		.cfi_offset 1, -8
+ 107              		.cfi_offset 8, -16
+ 108 0094 13040102 		addi	s0,sp,32
+ 109              		.cfi_def_cfa 8, 0
+  25:src/probasleep.cpp **** 
+  26:src/probasleep.cpp ****     thread_t a;
+ 110              		.loc 1 26 5
+  27:src/probasleep.cpp ****     thread_t b;
+ 111              		.loc 1 27 5
+  28:src/probasleep.cpp ****     thread_create(&a,&sleepA, nullptr);
+ 112              		.loc 1 28 5
+ 113              		.loc 1 28 18 is_stmt 0
+ 114 0098 13060000 		li	a2,0
+ 115 009c 97050000 		lla	a1,_Z6sleepAPv
+ 115      93850500 
+ 116 00a4 130584FE 		addi	a0,s0,-24
+ 117 00a8 97000000 		call	_Z13thread_createPP3TCBPFvPvES2_@plt
+ 117      E7800000 
+ 118              	.LVL10:
+  29:src/probasleep.cpp ****     thread_create(&b,&sleepB, nullptr);
+ 119              		.loc 1 29 5 is_stmt 1
+ 120              		.loc 1 29 18 is_stmt 0
+ 121 00b0 13060000 		li	a2,0
+ 122 00b4 97050000 		lla	a1,_Z6sleepBPv
+ 122      93850500 
+ 123 00bc 130504FE 		addi	a0,s0,-32
+ 124 00c0 97000000 		call	_Z13thread_createPP3TCBPFvPvES2_@plt
+ 124      E7800000 
+ 125              	.LVL11:
+ 126              	.L6:
+  30:src/probasleep.cpp ****     while (true){thread_dispatch();}
+ 127              		.loc 1 30 5 is_stmt 1
+ 128              		.loc 1 30 18
+ 129              		.loc 1 30 33 is_stmt 0
+ 130 00c8 97000000 		call	_Z15thread_dispatchv@plt
+ 130      E7800000 
+ 131              	.LVL12:
+ 132 00d0 6FF09FFF 		j	.L6
+ 133              		.cfi_endproc
+ 134              	.LFE2:
+ 136              	.Letext0:
+GAS LISTING /tmp/ccLp11oR.s 			page 4
+
+
+ 137              		.file 2 "src/../h/../lib/hw.h"
+ 138              		.file 3 "src/../h/syscall_c.h"
+GAS LISTING /tmp/ccLp11oR.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 probasleep.cpp
+     /tmp/ccLp11oR.s:9      .text:0000000000000000 _Z6sleepAPv
+     /tmp/ccLp11oR.s:13     .text:0000000000000000 .L0 
+     /tmp/ccLp11oR.s:15     .text:0000000000000000 .L0 
+     /tmp/ccLp11oR.s:16     .text:0000000000000004 .L0 
+     /tmp/ccLp11oR.s:19     .text:000000000000000c .L0 
+     /tmp/ccLp11oR.s:20     .text:000000000000000c .L0 
+     /tmp/ccLp11oR.s:22     .text:0000000000000010 .L0 
+     /tmp/ccLp11oR.s:24     .text:0000000000000010 .L0 
+     /tmp/ccLp11oR.s:25     .text:0000000000000010 .L0 
+     /tmp/ccLp11oR.s:30     .text:000000000000001c .L0 
+     /tmp/ccLp11oR.s:31     .text:000000000000001c .L0 
+     /tmp/ccLp11oR.s:35     .text:0000000000000028 .L0 
+     /tmp/ccLp11oR.s:36     .text:0000000000000028 .L0 
+     /tmp/ccLp11oR.s:40     .text:0000000000000034 .L0 
+     /tmp/ccLp11oR.s:41     .text:0000000000000038 .L0 
+     /tmp/ccLp11oR.s:43     .text:000000000000003c .L0 
+     /tmp/ccLp11oR.s:44     .text:000000000000003c .L0 
+     /tmp/ccLp11oR.s:46     .text:0000000000000040 .L0 
+     /tmp/ccLp11oR.s:48     .text:0000000000000044 .L0 
+     /tmp/ccLp11oR.s:54     .text:0000000000000044 _Z6sleepBPv
+     /tmp/ccLp11oR.s:57     .text:0000000000000044 .L0 
+     /tmp/ccLp11oR.s:59     .text:0000000000000044 .L0 
+     /tmp/ccLp11oR.s:60     .text:0000000000000048 .L0 
+     /tmp/ccLp11oR.s:63     .text:0000000000000050 .L0 
+     /tmp/ccLp11oR.s:64     .text:0000000000000050 .L0 
+     /tmp/ccLp11oR.s:66     .text:0000000000000054 .L0 
+     /tmp/ccLp11oR.s:68     .text:0000000000000054 .L0 
+     /tmp/ccLp11oR.s:69     .text:0000000000000054 .L0 
+     /tmp/ccLp11oR.s:74     .text:0000000000000060 .L0 
+     /tmp/ccLp11oR.s:75     .text:0000000000000060 .L0 
+     /tmp/ccLp11oR.s:79     .text:000000000000006c .L0 
+     /tmp/ccLp11oR.s:80     .text:000000000000006c .L0 
+     /tmp/ccLp11oR.s:84     .text:0000000000000078 .L0 
+     /tmp/ccLp11oR.s:85     .text:000000000000007c .L0 
+     /tmp/ccLp11oR.s:87     .text:0000000000000080 .L0 
+     /tmp/ccLp11oR.s:88     .text:0000000000000080 .L0 
+     /tmp/ccLp11oR.s:90     .text:0000000000000084 .L0 
+     /tmp/ccLp11oR.s:92     .text:0000000000000088 .L0 
+     /tmp/ccLp11oR.s:98     .text:0000000000000088 _Z10probasleepv
+     /tmp/ccLp11oR.s:101    .text:0000000000000088 .L0 
+     /tmp/ccLp11oR.s:102    .text:0000000000000088 .L0 
+     /tmp/ccLp11oR.s:103    .text:000000000000008c .L0 
+     /tmp/ccLp11oR.s:106    .text:0000000000000094 .L0 
+     /tmp/ccLp11oR.s:107    .text:0000000000000094 .L0 
+     /tmp/ccLp11oR.s:109    .text:0000000000000098 .L0 
+     /tmp/ccLp11oR.s:111    .text:0000000000000098 .L0 
+     /tmp/ccLp11oR.s:112    .text:0000000000000098 .L0 
+     /tmp/ccLp11oR.s:113    .text:0000000000000098 .L0 
+     /tmp/ccLp11oR.s:114    .text:0000000000000098 .L0 
+     /tmp/ccLp11oR.s:120    .text:00000000000000b0 .L0 
+     /tmp/ccLp11oR.s:121    .text:00000000000000b0 .L0 
+     /tmp/ccLp11oR.s:128    .text:00000000000000c8 .L0 
+     /tmp/ccLp11oR.s:129    .text:00000000000000c8 .L0 
+     /tmp/ccLp11oR.s:130    .text:00000000000000c8 .L0 
+     /tmp/ccLp11oR.s:133    .text:00000000000000d4 .L0 
+GAS LISTING /tmp/ccLp11oR.s 			page 6
+
+
+     /tmp/ccLp11oR.s:139    .text:00000000000000d4 .L0 
+     /tmp/ccLp11oR.s:115    .text:000000000000009c .L0 
+     /tmp/ccLp11oR.s:122    .text:00000000000000b4 .L0 
+     /tmp/ccLp11oR.s:126    .text:00000000000000c8 .L6
+     /tmp/ccLp11oR.s:602    .debug_abbrev:0000000000000000 .Ldebug_abbrev0
+     /tmp/ccLp11oR.s:984    .debug_str:000000000000016a .LASF48
+     /tmp/ccLp11oR.s:940    .debug_str:000000000000003e .LASF49
+     /tmp/ccLp11oR.s:1008   .debug_str:00000000000002c4 .LASF50
+     /tmp/ccLp11oR.s:5      .text:0000000000000000 .Ltext0
+     /tmp/ccLp11oR.s:136    .text:00000000000000d4 .Letext0
+     /tmp/ccLp11oR.s:928    .debug_line:0000000000000000 .Ldebug_line0
+     /tmp/ccLp11oR.s:992    .debug_str:0000000000000256 .LASF0
+     /tmp/ccLp11oR.s:972    .debug_str:000000000000010b .LASF1
+     /tmp/ccLp11oR.s:966    .debug_str:00000000000000e2 .LASF2
+     /tmp/ccLp11oR.s:946    .debug_str:000000000000006a .LASF4
+     /tmp/ccLp11oR.s:968    .debug_str:00000000000000f0 .LASF3
+     /tmp/ccLp11oR.s:938    .debug_str:0000000000000037 .LASF5
+     /tmp/ccLp11oR.s:934    .debug_str:0000000000000014 .LASF6
+     /tmp/ccLp11oR.s:958    .debug_str:00000000000000af .LASF7
+     /tmp/ccLp11oR.s:1000   .debug_str:0000000000000285 .LASF8
+     /tmp/ccLp11oR.s:944    .debug_str:000000000000005c .LASF9
+     /tmp/ccLp11oR.s:1030   .debug_str:0000000000000366 .LASF10
+     /tmp/ccLp11oR.s:960    .debug_str:00000000000000c2 .LASF11
+     /tmp/ccLp11oR.s:1024   .debug_str:000000000000033f .LASF12
+     /tmp/ccLp11oR.s:1006   .debug_str:00000000000002b4 .LASF13
+     /tmp/ccLp11oR.s:976    .debug_str:000000000000012c .LASF14
+     /tmp/ccLp11oR.s:950    .debug_str:0000000000000076 .LASF15
+     /tmp/ccLp11oR.s:1002   .debug_str:0000000000000295 .LASF16
+     /tmp/ccLp11oR.s:980    .debug_str:000000000000013f .LASF17
+     /tmp/ccLp11oR.s:1022   .debug_str:0000000000000336 .LASF18
+     /tmp/ccLp11oR.s:1004   .debug_str:00000000000002ab .LASF19
+     /tmp/ccLp11oR.s:986    .debug_str:000000000000022e .LASF20
+     /tmp/ccLp11oR.s:1018   .debug_str:0000000000000323 .LASF21
+     /tmp/ccLp11oR.s:1010   .debug_str:00000000000002e7 .LASF22
+     /tmp/ccLp11oR.s:1012   .debug_str:00000000000002f7 .LASF23
+     /tmp/ccLp11oR.s:1026   .debug_str:000000000000034f .LASF24
+     /tmp/ccLp11oR.s:988    .debug_str:000000000000023c .LASF25
+     /tmp/ccLp11oR.s:990    .debug_str:0000000000000248 .LASF26
+     /tmp/ccLp11oR.s:932    .debug_str:000000000000000b .LASF27
+     /tmp/ccLp11oR.s:1028   .debug_str:000000000000035c .LASF28
+     /tmp/ccLp11oR.s:970    .debug_str:0000000000000102 .LASF29
+     /tmp/ccLp11oR.s:996    .debug_str:000000000000026e .LASF30
+     /tmp/ccLp11oR.s:942    .debug_str:0000000000000051 .LASF31
+     /tmp/ccLp11oR.s:962    .debug_str:00000000000000d1 .LASF32
+     /tmp/ccLp11oR.s:956    .debug_str:00000000000000aa .LASF33
+     /tmp/ccLp11oR.s:930    .debug_str:0000000000000000 .LASF34
+     /tmp/ccLp11oR.s:936    .debug_str:0000000000000027 .LASF36
+     /tmp/ccLp11oR.s:99     .text:0000000000000088 .LFB2
+     /tmp/ccLp11oR.s:134    .text:00000000000000d4 .LFE2
+     /tmp/ccLp11oR.s:118    .text:00000000000000b0 .LVL10
+     /tmp/ccLp11oR.s:125    .text:00000000000000c8 .LVL11
+     /tmp/ccLp11oR.s:131    .text:00000000000000d0 .LVL12
+     /tmp/ccLp11oR.s:978    .debug_str:0000000000000138 .LASF35
+     /tmp/ccLp11oR.s:998    .debug_str:0000000000000279 .LASF37
+     /tmp/ccLp11oR.s:55     .text:0000000000000044 .LFB1
+     /tmp/ccLp11oR.s:93     .text:0000000000000088 .LFE1
+     /tmp/ccLp11oR.s:887    .debug_loc:0000000000000000 .LLST1
+GAS LISTING /tmp/ccLp11oR.s 			page 7
+
+
+     /tmp/ccLp11oR.s:72     .text:0000000000000060 .LVL7
+     /tmp/ccLp11oR.s:77     .text:000000000000006c .LVL8
+     /tmp/ccLp11oR.s:82     .text:0000000000000078 .LVL9
+     /tmp/ccLp11oR.s:1020   .debug_str:000000000000032f .LASF38
+     /tmp/ccLp11oR.s:964    .debug_str:00000000000000d6 .LASF39
+     /tmp/ccLp11oR.s:10     .text:0000000000000000 .LFB0
+     /tmp/ccLp11oR.s:49     .text:0000000000000044 .LFE0
+     /tmp/ccLp11oR.s:901    .debug_loc:0000000000000039 .LLST0
+     /tmp/ccLp11oR.s:28     .text:000000000000001c .LVL2
+     /tmp/ccLp11oR.s:33     .text:0000000000000028 .LVL3
+     /tmp/ccLp11oR.s:38     .text:0000000000000034 .LVL4
+     /tmp/ccLp11oR.s:982    .debug_str:0000000000000149 .LASF40
+     /tmp/ccLp11oR.s:974    .debug_str:000000000000011e .LASF42
+     /tmp/ccLp11oR.s:954    .debug_str:0000000000000095 .LASF41
+     /tmp/ccLp11oR.s:1014   .debug_str:0000000000000303 .LASF43
+     /tmp/ccLp11oR.s:1016   .debug_str:0000000000000313 .LASF44
+     /tmp/ccLp11oR.s:994    .debug_str:0000000000000263 .LASF45
+     /tmp/ccLp11oR.s:952    .debug_str:000000000000008c .LASF46
+     /tmp/ccLp11oR.s:948    .debug_str:0000000000000071 .LASF47
+     /tmp/ccLp11oR.s:58     .text:0000000000000044 .LVL5
+     /tmp/ccLp11oR.s:70     .text:0000000000000058 .LVL6
+     /tmp/ccLp11oR.s:14     .text:0000000000000000 .LVL0
+     /tmp/ccLp11oR.s:26     .text:0000000000000014 .LVL1
+     /tmp/ccLp11oR.s:140    .debug_info:0000000000000000 .Ldebug_info0
+
+UNDEFINED SYMBOLS
+_Z10time_sleepm
+_Z4putcc
+_Z13thread_createPP3TCBPFvPvES2_
+_Z15thread_dispatchv
